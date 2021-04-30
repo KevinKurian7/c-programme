@@ -84,7 +84,21 @@ void delete_nthlink(int n)
     temp1->next=temp2->next;
     free(temp2);
 }
+void reverse()
+{
+    struct node* current,*prev,*next;
+    current=head;
+    prev=NULL;
+    while(current!=NULL)
+    {
+        next=current->next;
+        current->next=prev;
+        prev=current;
+        current=next;
 
+    } 
+    head=prev;
+}
 int  main()
 {
     insertathead(9);    print();
@@ -93,6 +107,8 @@ int  main()
     insertathead(7);    
     print();
     delete_nthlink(2);
+    print();
+    reverse();
     print();
     return 0;
 }
