@@ -48,6 +48,30 @@ void print()
     }
     printf("\n");
 }
+void recursive_print(struct node* temp)
+{
+    if(temp==NULL)
+    {
+        return;
+    }
+ 
+    
+        printf("%d ",temp->data);
+        recursive_print(temp->next);//the recursive call;
+    
+ 
+
+}
+void reverse_recursive_print(struct node* temp)
+{
+    if(temp==NULL)
+    {
+        return;
+
+    }
+    reverse_recursive_print(temp->next);
+    printf("%d ",temp->data);
+}
 
 void insert_at_n(int x,int n)
 {
@@ -108,7 +132,15 @@ int  main()
     print();
     delete_nthlink(2);
     print();
-    reverse();
+    reverse();//reverse the linked list
+    printf("reversed list: \n");
     print();
+
+    printf("recursively printed list: \n");
+    recursive_print(head);//recursive function to print the list recursively
+   
+    printf("\nrecursively printed reversed list: \n");//reverse the list and print it with help of recursive calls
+    reverse_recursive_print(head);
+    printf("\n");
     return 0;
 }
