@@ -91,7 +91,7 @@ void reverseprint(){
     if(temp==NULL){
         return;
     }
-    while(temp!=NULL){
+    while(temp->next!=NULL){
             temp=temp->next;
     }
     cout<<"reverse";
